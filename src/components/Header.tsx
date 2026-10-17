@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Upload } from 'lucide-react';
+import { LOGO_IMAGE_BASE64 } from '../assets/logoImageBase64';
 
 interface HeaderProps {
   onTitleClick?: () => void;
@@ -9,7 +10,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({
   onTitleClick,
-  logoUrl = '/images.png',
+  logoUrl = LOGO_IMAGE_BASE64 || '/images.png',
   onLogoUploaded,
 }) => {
   const [imgError, setImgError] = useState(false);
