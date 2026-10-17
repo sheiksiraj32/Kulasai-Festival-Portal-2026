@@ -1,0 +1,8 @@
+{
+  "name": "Kulasai Dasara Festival 2026 - Public Information Portal",
+  "description": "Official Kulasai Dasara Festival 2026 public information and emergency assistance portal by Thoothukudi District Administration with consolidated festival map and contact directory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
