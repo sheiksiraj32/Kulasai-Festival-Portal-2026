@@ -1,6 +1,5 @@
 import { FestivalConfig, OfficialContact } from '../types/festival';
 import officialFestivalMap from '../assets/kulasai-festival-map.jpg';
-import { MAP_IMAGE_BASE64 } from '../assets/mapImageBase64';
 import { LOGO_IMAGE_BASE64 } from '../assets/logoImageBase64';
 
 /**
@@ -10,7 +9,7 @@ import { LOGO_IMAGE_BASE64 } from '../assets/logoImageBase64';
  * Official Configuration & Contact Directory
  * Authoritative Original Assets:
  * 1. Tamil Nadu Government Logo: Original uploaded asset
- * 2. Kulasai Dasara Festival Map: Original consolidated route map
+ * 2. Kulasai Dasara Festival Map: Newly updated high-resolution route map (src/assets/kulasai-festival-map.jpg)
  */
 export const FESTIVAL_CONFIG: FestivalConfig = {
   stateGovtName: 'GOVERNMENT OF TAMIL NADU',
@@ -29,8 +28,7 @@ export const FESTIVAL_CONFIG: FestivalConfig = {
     locationLabel: 'Festival Control Room, Kulasai',
   },
   // Exact consolidated festival map image uploaded by the administrator
-  // Uses authoritative embedded data URI + bundled asset for 100% reliability on Vercel
-  mapImageUrl: MAP_IMAGE_BASE64 || officialFestivalMap,
+  mapImageUrl: officialFestivalMap,
 
   // Google Sheets configuration (optional)
   googleSheetId: '',

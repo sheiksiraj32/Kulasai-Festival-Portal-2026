@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { ArrowLeft, ZoomIn, ZoomOut, RotateCcw, RefreshCw } from 'lucide-react';
 import officialFestivalMap from '../assets/kulasai-festival-map.jpg';
-import { MAP_IMAGE_BASE64 } from '../assets/mapImageBase64';
 
 interface MapViewerProps {
   imageUrl?: string;
@@ -10,8 +9,8 @@ interface MapViewerProps {
 }
 
 export const MapViewer: React.FC<MapViewerProps> = ({ imageUrl, onBack }) => {
-  // Primary authoritative map image source
-  const defaultSource = MAP_IMAGE_BASE64 || imageUrl || officialFestivalMap;
+  // Primary authoritative map image source: the newly uploaded image in assets
+  const defaultSource = imageUrl || officialFestivalMap || '/kulasai-festival-map.jpg';
 
   // Zoom and Pan states
   const [scale, setScale] = useState(1);
@@ -27,12 +26,8 @@ export const MapViewer: React.FC<MapViewerProps> = ({ imageUrl, onBack }) => {
 
   const fallbackList = [
     defaultSource,
-    MAP_IMAGE_BASE64,
-    imageUrl,
     officialFestivalMap,
     '/kulasai-festival-map.jpg',
-    '/Kulasai Festival Single Map.jpeg',
-    '/Kulasai Festival-Model Final 1_page-0001 (3).jpg',
   ].filter((url, index, self): url is string => Boolean(url) && self.indexOf(url) === index);
 
   // References
